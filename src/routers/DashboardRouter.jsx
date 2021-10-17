@@ -1,5 +1,11 @@
+import Inicio from "../components/Inicio";
+
 const DashboardRouter = () => {
-  return <div></div>;
+  return (
+    <>
+      <Inicio />
+    </>
+  );
 };
 
 export default DashboardRouter;
