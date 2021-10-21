@@ -1,0 +1,12 @@
+.main-container {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 100% 1fr 5%;
+  overflow-x: hidden;
+}
