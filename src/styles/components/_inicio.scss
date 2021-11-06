@@ -12,6 +12,7 @@
     url("https://cdn.pixabay.com/photo/2020/08/04/18/43/cyber-monday-5463567_960_720.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   background-position: top;
   flex-direction: column;
   justify-content: space-between;
@@ -27,9 +28,9 @@
   background-color: transparent;
 }
 .header__nav-menu__md {
-  width: 15%;
+  width: 18%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .header__nav-menu__md-link {
@@ -75,6 +76,24 @@
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   cursor: pointer;
+}
+.profile {
+  width: 39px;
+  height: 38px;
+  background-color: #2f80ed;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: thin solid #fff;
+  display: flex;
+  justify-content: center;
+
+  i {
+    color: #fff;
+    font-size: 35px;
+  }
 }
 .header__main-section {
   width: 100%;

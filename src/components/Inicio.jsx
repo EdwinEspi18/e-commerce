@@ -32,7 +32,9 @@ const Inicio = () => {
                   Sign In
                 </Link>
                 <div className='btn__carts'>My Cart</div>
-                <div className='profile'></div>
+                <div className='profile'>
+                  <i className='fas fa-user-circle'></i>
+                </div>
               </div>
             </div>
             <div className='header__main-center'>
