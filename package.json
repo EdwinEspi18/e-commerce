@@ -18,7 +18,8 @@
     "sass": "^1.43.2",
     "sweetalert2": "^11.1.9",
     "web-vitals": "^1.0.1",
-    "eslint-config-prettier": "^8.3.0"
+    "eslint-config-prettier": "^8.3.0",
+    "standard": "^16.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
