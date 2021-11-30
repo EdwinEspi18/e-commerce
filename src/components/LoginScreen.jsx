@@ -2,13 +2,14 @@ import { Link } from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import { useDispatch } from 'react-redux'
 import { startLogin } from '../actions/auth.action'
+import { useState } from 'react'
 
 const initForm = { email: '', password: '' }
 
 const LoginScreen = () => {
   const dispatch = useDispatch()
   const [{ email, password }, handleInputChange] = useForm(initForm)
-
+  const [eye, setEye] = useState('password')
   const handleLogin = (e) => {
     if (email === '' || password === '') {
       return null
@@ -18,6 +19,9 @@ const LoginScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
   }
+  const handleEye = () => {
+    setEye(eye === 'password' ? 'text' : 'password')
+  }
 
   return (
     <article className="login__article">
@@ -25,14 +29,14 @@ const LoginScreen = () => {
         <i className="fas fa-arrow-circle-left" />
       </Link>
       <div className="login__article-paragraph">
-        <h1>Let`s sign you in.</h1>
-        <h5>Welcome back. You`ve been missed!</h5>
+        <h1>Vamos a iniciar sesión.</h1>
+        <h5>Bienvenido de nuevo. ¡Te han extrañado!</h5>
       </div>
       <form className="login__form" onSubmit={handleSubmit}>
         <input
           className="login__form-input"
           type="email"
-          placeholder="Your Email"
+          placeholder="Su Correo Electronico"
           name="email"
           value={email}
           onChange={handleInputChange}
@@ -40,27 +44,27 @@ const LoginScreen = () => {
         <div className="pass">
           <input
             className="login__form-input"
-            type="password"
-            placeholder="Your Password"
+            type={eye}
+            placeholder="Su Contraseña"
             name="password"
             value={password}
             onChange={handleInputChange}
           />
-          <button className="login__article-btn-eye">
+          <button className="login__article-btn-eye" onClick={handleEye}>
             <i className="far fa-eye" />
           </button>
         </div>
       </form>
       <div className="container-btn">
         <div className="links">
-          <h5>Don`t have an account?</h5>
+          <h5>¿No tienes una cuenta?</h5>
           <Link className="link-register" to="/auth/register">
-            Register
+            Registrarse
           </Link>
         </div>
 
         <button className="login__article-btn_login" onClick={handleLogin}>
-          Sign In
+          Iniciar sesión
         </button>
       </div>
     </article>

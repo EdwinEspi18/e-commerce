@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { icons } from '../helpers/icons'
 import CardHeader from './CardHeader'
-import useModal from 'react-hook-usemodal'
-import { Prueba } from './Prueba'
 import { startLogout } from '../actions/auth.action'
 import { types } from '../types/types'
+import { Link } from 'react-router-dom'
+
 const Inicio = () => {
   const dispatch = useDispatch()
   const {
     user: { name },
   } = useSelector((state) => state.auth)
-  const [Modal, show, toggle] = useModal(Prueba)
   const handleClick = () => {
     dispatch(startLogout())
     dispatch({ type: types.removeProduct })
@@ -23,10 +22,11 @@ const Inicio = () => {
             <div className="header__nav-menu">
               <div className="header__nav-menu-logo" />
               <div className="header__nav-menu__md">
-                <button onClick={handleClick}>Logout</button>
-                {show && <Modal closeModal={toggle} />}
-                <div className="btn__carts" onClick={() => toggle(!show)}>
-                  My Cart
+                <button className="btn__logout" onClick={handleClick}>
+                  Logout
+                </button>
+                <div className="btn__carts">
+                  <Link to="/carts">My Cart</Link>
                 </div>
                 <div>
                   <p>{name}</p>

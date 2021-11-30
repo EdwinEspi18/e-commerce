@@ -8,6 +8,7 @@ import PrivateRoute from '../components/PrivateRoute'
 import { useDispatch, useSelector } from 'react-redux'
 import PublicRoute from '../components/PublicRoute'
 import { login } from '../actions/auth.action'
+import { Prueba } from '../components/Prueba'
 
 const AppRouter = () => {
   const { isAuth } = useSelector((state) => state.auth)
@@ -42,6 +43,7 @@ const AppRouter = () => {
             path="/"
             component={DashboardRouter}
           />
+          <PrivateRoute isAuth={isAuth} path="/carts" component={Prueba} />
           <Redirect to="/auth" />
         </Switch>
       </div>

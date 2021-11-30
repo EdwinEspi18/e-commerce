@@ -8,6 +8,9 @@ const LoginScreen = () => {
   const dispatch = useDispatch()
   const [{ name, email, password }, handleInputChange] = useForm(initForm)
   const handleClick = (e) => {
+    if (name === '' || email === '' || password === '') {
+      return null
+    }
     dispatch(startRegister(name, email, password))
   }
   return (
@@ -16,8 +19,8 @@ const LoginScreen = () => {
         <i className="fas fa-arrow-circle-left" />
       </Link>
       <div className="login__article-paragraph">
-        <h1>Let`s sign you in.</h1>
-        <h5>Welcome back. You`ve been missed!</h5>
+        <h1>Crear una nueva cuenta.</h1>
+        <h5>¡Que esperas para ver nuestro catalogo!</h5>
       </div>
       <form className="login__form">
         <input
@@ -27,7 +30,7 @@ const LoginScreen = () => {
           name="name"
           value={name}
           onChange={handleInputChange}
-          placeholder="Your Name"
+          placeholder="Su Nombre"
         />
         <input
           autoComplete="off"
@@ -36,7 +39,7 @@ const LoginScreen = () => {
           name="email"
           value={email}
           onChange={handleInputChange}
-          placeholder="Your Email"
+          placeholder="Su Correo Electronico"
         />
 
         <div className="pass">
@@ -47,14 +50,15 @@ const LoginScreen = () => {
             name="password"
             value={password}
             onChange={handleInputChange}
-            placeholder="Your Password"
+            placeholder="Su Contraseña"
           />
         </div>
       </form>
       <div className="container-btn">
         <br />
+        <br />
         <button className="login__article-btn_login" onClick={handleClick}>
-          Register
+          Registrar
         </button>
       </div>
     </article>

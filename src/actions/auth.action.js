@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signOut,
 } from 'firebase/auth'
+import Swal from 'sweetalert2'
 import { app } from '../firebase/firebase'
 
 export const startLogin = (email, password) => {
@@ -19,6 +20,7 @@ export const startLogin = (email, password) => {
       })
       .catch((err) => {
         console.log(err)
+        Swal.fire('Error', 'Correo o Contraseña incorrecta', 'error')
       })
   }
 }
@@ -32,6 +34,7 @@ export const startRegister = (name, email, password) => {
       })
       .catch((err) => {
         console.log(err)
+        Swal.fire('Error', err.message, 'error')
       })
   }
 }

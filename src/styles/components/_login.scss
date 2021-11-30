@@ -28,7 +28,9 @@
 .login__form-input {
   background-color: $input-login;
   border: thin solid #37343f;
+  color: #ffffff;
   width: 90%;
+  padding: 10px;
   height: 70px;
   margin-top: 5px;
   border-radius: 20px;
@@ -60,8 +62,9 @@
   border: none;
   position: absolute;
   top: 40%;
-  right: 40px;
+  right: 75px;
   color: #fff;
+  cursor: pointer;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -114,17 +117,8 @@
     border: none;
   }
 }
-@media screen and (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media screen and (min-width: 768px) {
-}
-
-// Large devices (desktops, 992px and up)
-@media screen and (min-width: 992px) {
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 576px) {
+  .login__article-btn-eye {
+    right: 35px;
+  }
 }

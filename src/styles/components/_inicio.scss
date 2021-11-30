@@ -94,6 +94,26 @@
     }
   }
 }
+.btn__logout {
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  width: 65px;
+  height: 35px;
+  background-color: #fff;
+  color: $dark;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3;
+  -moz-transition: background-color 0.3;
+  -ms-transition: background-color 0.3;
+  -o-transition: background-color 0.3;
+  &:hover {
+    background-color: darken($color: #fff, $amount: 20);
+  }
+}
 .btn__carts {
   padding: 5px;
   border-radius: 6px;
@@ -109,6 +129,10 @@
   -o-transition: background-color 0.3;
   &:hover {
     background-color: darken($color: #fff, $amount: 20);
+  }
+  & a {
+    text-decoration: none;
+    color: $dark;
   }
 }
 .profile {
@@ -170,4 +194,17 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+@media screen and (max-width: 576px) {
+  .header__nav-menu__md {
+    width: 75%;
+    justify-content: space-around;
+  }
+  .header__main-section-container {
+    width: 100%;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media screen and (min-width: 768px) {
 }
